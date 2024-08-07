@@ -1,6 +1,8 @@
 package br.com.kuddlez.dao;
 
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.kuddlez.dominio.Usuario;
@@ -52,15 +54,92 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 
 	@Override
 	public List<Usuario> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		List<Usuario> lista = new ArrayList<Usuario>();
+		try {
+			if(abrirConexao()) {
+				String sql = "select * from usuario";
+				pst = con.prepareStatement(sql);
+				rs = pst.executeQuery();
+				
+				while(rs.next()) {
+					Usuario us = new Usuario();
+					us.setIdUsuario(rs.getInt(1));
+					us.setNomeCompleto(rs.getString(2));
+					us.setLoginUsuario(rs.getString(3));
+					us.setSenhaUsuario(rs.getString(4));
+					us.setEmailUsuario(rs.getString(5));
+					us.setTelefoneUsuario(rs.getString(6));
+					us.setEnderecoUsuario(rs.getString(7));
+					us.setCpfUsuario(rs.getString(8));
+					us.setCnpjUsuario(rs.getString(9));
+					us.setDataNascimentoUsuario(rs.getString(10));
+					us.setCriadoem(rs.getDate(11));
+					
+					lista.add(us);
+				}
+			}
+			
+			else {
+				throw new Exception("Não foi possível estabelecer a conexão com o banco");
+			}
+		}
+		catch (SQLException se) {
+			new Exception("Erro na consulta da lista"+se.getMessage());
+		}
+		catch (Exception e) {
+			new Exception("Erro inesperado"+e.getMessage());
+		}
+		finally {
+			fecharConexao();
+		}
+		
+		return lista;
 	}
 
+	
 	@Override
 	public Usuario pesquisar(Usuario dados) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		Usuario us = new Usuario();
+		
+		try {
+			if(abrirConexao()) {
+				String sql = "Select * from where idusuario=?";
+				pst = con.prepareStatement(sql);
+				
+				pst.setInt(1,dados.getIdUsuario());
+				
+				rs = pst.executeQuery();
+				
+				if(rs.next()) {
+					us.setIdUsuario(rs.getInt(1));
+					us.setNomeCompleto(rs.getString(2));
+					us.setLoginUsuario(rs.getString(3));
+					us.setSenhaUsuario(rs.getString(4));
+					us.setEmailUsuario(rs.getString(5));
+					us.setTelefoneUsuario(rs.getString(6));
+					us.setEnderecoUsuario(rs.getString(7));
+					us.setCpfUsuario(rs.getString(8));
+					us.setCnpjUsuario(rs.getString(9));
+					us.setDataNascimentoUsuario(rs.getString(10));
+					us.setCriadoem(rs.getDate(11));
+				}
+			
+			else {
+				throw new Exception("Não foi possível estabelecer a conexão com o banco");
+				}
+			}
+		
+			catch(SQLException se) {
+				new Exception("Erro na pesquisa"+se.getMessage());
+			}
+			catch(Exception e) {
+				new Exception("Erro inesperado"+e.getMessage());
+			}
+			finally {
+				fecharConexao();
+			}		
+		return us;
+		}
 
 	@Override
 	public String atualizar(Usuario dados) {
