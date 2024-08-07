@@ -1,6 +1,9 @@
 package br.com.kuddlez.dominio;
 
+import java.sql.Date;
+
 public class Usuario {
+	
 	private Integer idUsuario;
 	private String nomeCompleto;
 	private String loginUsuario;
@@ -11,8 +14,7 @@ public class Usuario {
 	private String cpfUsuario;
 	private String cnpjUsuario;
 	private String dataNascimentoUsuario;
-	private String criadoem;
-	
+	private Date criadoem;
 	
 	public Integer getIdUsuario() {
 		return idUsuario;
@@ -74,12 +76,15 @@ public class Usuario {
 	public void setDataNascimentoUsuario(String dataNascimentoUsuario) {
 		this.dataNascimentoUsuario = dataNascimentoUsuario;
 	}
-	public String getCriadoem() {
+	public Date getCriadoem() {
 		return criadoem;
 	}
-	public void setCriadoem(String criadoem) {
+	public void setCriadoem(Date criadoem) {
 		this.criadoem = criadoem;
 	}
+	
+	
+	
 	
 
 }
