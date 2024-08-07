@@ -123,6 +123,8 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 					us.setDataNascimentoUsuario(rs.getString(10));
 					us.setCriadoem(rs.getDate(11));
 				}
+				
+			}
 			
 			else {
 				throw new Exception("Não foi possível estabelecer a conexão com o banco");
