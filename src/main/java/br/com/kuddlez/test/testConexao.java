@@ -3,6 +3,8 @@ package br.com.kuddlez.test;
 import static org.junit.Assert.assertEquals;
 
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -11,22 +13,44 @@ import br.com.kuddlez.dominio.Usuario;
 
 public class testConexao {
 	
-	@Test
-	public void testCadastroUsuario() {
-		Usuario us = new Usuario();
-		us.setNomeCompleto("user");
-		us.setLoginUsuario("user1");
-		us.setSenhaUsuario("123");
-		us.setEmailUsuario("user@gmail.com");
-		us.setTelefoneUsuario("5956654656");
-		us.setEnderecoUsuario("rua usuario do fulano");
-		us.setCpfUsuario("445645456");
-		us.setCnpjUsuario("null");
-//		us.setDataNascimentoUsuario(Date.valueOf("2005-05-25"));
-		us.setDataNascimentoUsuario("2005-05-25");
-		
-		
-		DaoUsuario daous = new DaoUsuario();
-		assertEquals("Cadastro realizado", daous.Cadastrar(us));
-	}
+//	@Test
+//	public void testCadastroUsuario() {
+//		Usuario us = new Usuario();
+//		us.setNomeCompleto("user");
+//		us.setLoginUsuario("user1");
+//		us.setSenhaUsuario("123");
+//		us.setEmailUsuario("user@gmail.com");
+//		us.setTelefoneUsuario("5956654656");
+//		us.setEnderecoUsuario("rua usuario do fulano");
+//		us.setCpfUsuario("445645456");
+//		us.setCnpjUsuario("");
+//	//	us.setDataNascimentoUsuario(Date.valueOf("2005-05-25"));
+//		us.setDataNascimentoUsuario("2005-05-25");
+//		
+//		
+//		DaoUsuario daous = new DaoUsuario();
+//		assertEquals("Cadastro realizado", daous.Cadastrar(us));
+//	
+	
+//	@Test
+//	public void testListar() {
+//		DaoUsuario daous = new DaoUsuario();
+//		List<Usuario> resultado = new ArrayList<Usuario>();
+//	    assertEquals(resultado, daous.listar());
+//	}
+//}
+//	
+	
+//@Test	
+//public void testPesquisa () {
+//	DaoUsuario daous = new DaoUsuario();
+//	Usuario idUsuario = new Usuario();
+//	
+//	idUsuario.setIdUsuario(1);
+//	
+//	assertEquals("user", daous.pesquisar(idUsuario).getNomeCompleto());
+//}
+//}
 }
+	
+

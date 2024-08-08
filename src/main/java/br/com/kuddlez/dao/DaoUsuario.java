@@ -103,7 +103,7 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 		
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from where idusuario=?";
+				String sql = "Select * from usuario where idUsuario=?";
 				pst = con.prepareStatement(sql);
 				
 				pst.setInt(1,dados.getIdUsuario());
@@ -145,25 +145,91 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 
 	@Override
 	public String atualizar(Usuario dados) {
-		// TODO Auto-generated method stub
-		return null;
+		String msg = "";
+		
+		try {
+			if(abrirConexao()) {
+				String sql = "Update usuario set nomeCompleto=?,loginUsuario=?,emailUsuario=?,telefoneUsuario=?,enderecoUsuario=? where idUsuario=?";
+				pst = con.prepareStatement(sql);
+				
+				pst.setString(1,dados.getNomeCompleto());
+				pst.setString(2,dados.getLoginUsuario());
+				pst.setString(3, dados.getEmailUsuario());
+				pst.setString(4,dados.getTelefoneUsuario());
+				pst.setString(5,dados.getEnderecoUsuario());
+				pst.setInt(6,dados.getIdUsuario());
+				
+				if(pst.executeUpdate()>0) {
+					msg = "Atualização realizada";
+				}
+				else {
+					msg = "Não foi possível atualizar";
+				}
+			}
+			else {
+				msg = "Não foi possível estabelecer a conexão com o banco de dados";
+			}
+			
+		}
+		catch(SQLException se) {
+			msg = "Erro na atualização."+se.getMessage();
+		}
+		catch(Exception e) {
+			msg = "Erro inesperado" +e.getMessage();
+		}
+		finally {
+			fecharConexao();
+		}
+		return msg;
 	}
 
 	@Override
 	public String apagar(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		String msg = "";
+		try {
+			if(abrirConexao()) {
+				String sql = "delete from usuario where idUsuario=?";
+				pst = con.prepareStatement(sql);
+				pst.setInt(1, id);
+				
+				if(pst.executeUpdate()>0) {
+					msg = "Usuario deletado";
+				}
+				else {
+					msg = "Não foi possível apagar o usuário";
+				}
+			}
+			else {
+				msg = "Não foi possível estabelecer a conexão com o banco";
+			}
+		}
+		
+		catch(SQLException se){
+			msg = "Erro ao apagar" + se.getMessage();
+		}
+		catch(Exception e) {
+			msg = "Erro inesperado" + e.getMessage();
+		}
+		finally {
+			fecharConexao();
+		}
+		return msg;
 	}
 
 	@Override
 	public boolean login(Usuario dados) {
-		// TODO Auto-generated method stub
+		boolean auth = true;
+		try {
+			if(abrirConexao()) {
+				String sql = "select loginUsuario, "
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public String alterarsenha(Usuario dados) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	
