@@ -221,8 +221,26 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 		boolean auth = true;
 		try {
 			if(abrirConexao()) {
-				String sql = "select loginUsuario, "
+				String sql = "select loginUsuario, senhaUsuario from usuario where loginUsuario=? and senhaUsuario=? ";
+				pst = con.prepareStatement(sql);
+				pst.setString(1, dados.getLoginUsuario());
+				
+				rs = pst.executeQuery();
+				
+				if(!rs.next()) {
+					auth = false;
+				}
 			}
+			
+			else {
+				throw new Exception("Não foi possível estabelecer a conexão com o banco");
+			}
+			
+		}
+		
+		catch(SQLException se) {
+			auth = false;
+			new Exception("Erro na Consulta" + se.getMessage());
 		}
 		return false;
 	}
