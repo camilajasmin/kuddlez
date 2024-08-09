@@ -242,13 +242,48 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 			auth = false;
 			new Exception("Erro na Consulta" + se.getMessage());
 		}
-		return false;
+		catch(Exception e) {
+			new Exception("Erro inesperado"+ e.getMessage());
+		}
+		finally {
+			fecharConexao();
+		}
+		return auth;
 	}
 
 	@Override
 	public String alterarsenha(Usuario dados) {
+		String msg = "";
+		try {
+		if(abrirConexao()) {
+			String sql = "update usuario set senhaUsuario=? where idUsuario=?";
+			pst = con.prepareStatement(sql);
+			pst.setString(1,dados.getSenhaUsuario());
+			pst.setInt(2,dados.getIdUsuario());
+			
+			if(pst.executeUpdate()> 0) {
+				msg = "Atualização realizado";
+			}
+			else {
+				msg = "Não foi possível atualização";
+			}
+		}
+		else {
+			msg = "Não foi possível estabelecer a conexão com o banco de dados";
+		}
+			
+	}
+		catch(SQLException se) {
+			msg = "Erro na atualização. "+se.getMessage();
+		}
+		catch(Exception e){
+			msg = "Erro inesperado. "+e.getMessage();
+		}
+		finally {
+			fecharConexao();
+		}
 		
-		return null;
+		return msg;
 	}
 	
 }
