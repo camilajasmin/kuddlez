@@ -123,6 +123,9 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 					us.setDataNascimentoUsuario(rs.getString(10));
 					us.setCriadoem(rs.getDate(11));
 				}
+				 else {
+			            System.out.println("Usuário não encontrado para ID: " + dados.getIdUsuario());
+			        }
 				
 			}
 			
@@ -262,7 +265,7 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 			pst.setInt(2,dados.getIdUsuario());
 			
 			if(pst.executeUpdate()> 0) {
-				msg = "Atualização realizado";
+				msg = "Atualização realizada";
 			}
 			else {
 				msg = "Não foi possível atualização";
