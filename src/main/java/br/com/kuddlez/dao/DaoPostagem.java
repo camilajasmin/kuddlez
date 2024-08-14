@@ -1,5 +1,6 @@
 package br.com.kuddlez.dao;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.com.kuddlez.dominio.Postagem;
