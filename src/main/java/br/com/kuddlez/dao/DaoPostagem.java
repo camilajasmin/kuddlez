@@ -28,10 +28,10 @@ public class DaoPostagem extends CONEXAO implements CRUDKuddlez<Postagem>{
 	                    pst.setBoolean(10,dados.getIfComentarioPost());
 	 
 	                    if(pst.executeUpdate() > 0) {
-	                        msg = "Cadastro realizado";
+	                        msg = "Postagem realizada";
 	                    }
 	                    else {
-	                        msg = "Não foi possível cadastrar";
+	                        msg = "Não foi possível realizar a postagem";
 	                    }
 	                }
 	                else {
@@ -39,7 +39,7 @@ public class DaoPostagem extends CONEXAO implements CRUDKuddlez<Postagem>{
 	                }
 	            }
 	            catch(SQLException se) {
-	                msg = "Erro ao tentar cadastrar. "+se.getMessage();
+	                msg = "Erro ao tentar cadastrar a postagem. "+se.getMessage();
 	                }
 	            catch(Exception e) {
 	                msg = "Erro inesperado. "+e.getMessage();
@@ -87,7 +87,7 @@ public class DaoPostagem extends CONEXAO implements CRUDKuddlez<Postagem>{
 		        }
 		    }
 		    catch(SQLException se) {
-		        new Exception("Erro inesperado"+se.getMessage());
+		        new Exception("Erro ao listar"+se.getMessage());
 		    }
 		    catch(Exception e) {
 		        new Exception("Erro inesperado"+e.getMessage());
@@ -132,7 +132,7 @@ public class DaoPostagem extends CONEXAO implements CRUDKuddlez<Postagem>{
 	    }
 	 
 	    catch(SQLException se) {
-	        new Exception("Erro inesperado. "+se.getMessage());
+	        new Exception("Erro ao realizar a pesquisa. "+se.getMessage());
 	    }
 	    catch(Exception e) {
 	        new Exception("Erro inesperado. "+e.getMessage());
