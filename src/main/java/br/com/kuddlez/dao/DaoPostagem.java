@@ -16,16 +16,16 @@ public class DaoPostagem extends CONEXAO implements CRUDKuddlez<Postagem>{
 	                    String sql = "insert into postagem(idUsuario,dataHoraPost,txtPost,imgPost,videoPost,qtdLikePost,qtdSalvosPost,qtdComentPost,ifComentarioPost)values(?,?,?,?,?,?,?,?)";
 	                    pst = con.prepareStatement(sql);
 	                   
-	                    pst.setInt(1, dados.getIdUsuario());
-	                    pst.setDate(2, dados.getDataHoraPost());
-	                    pst.setString(3, dados.getTxtPost());
+	                    pst.setInt(1,dados.getIdUsuario());
+	                    pst.setDate(2,dados.getDataHoraPost());
+	                    pst.setString(3,dados.getTxtPost());
 	                    pst.setBytes(5, dados.getImgPost());
-	                    pst.setString(6, dados.getVideoPost());
+	                    pst.setString(6,dados.getVideoPost());
 	                    pst.setString(7,dados.getVideoPost());
 	                    pst.setString(8,dados.getQtdLikePost());
 	                    pst.setString(9,dados.getQtdComentsPost());
 	                    pst.setString(10,dados.getQtdSalvosPost());
-	                    pst.setBoolean(11, dados.getIfComentarioPost());
+	                    pst.setBoolean(11,dados.getIfComentarioPost());
 	 
 	                    if(pst.executeUpdate() > 0) {
 	                        msg = "Cadastro realizado";
@@ -61,7 +61,9 @@ public class DaoPostagem extends CONEXAO implements CRUDKuddlez<Postagem>{
 		            String sql = "Select * from postagem order by idPostagem desc";
 		            pst = con.prepareStatement(sql);
 		            rs = pst.executeQuery();
+		            
 		            while (rs.next()) {
+		            	
 		                Postagem post = new Postagem();
 		                post.setIdUsuario(rs.getInt(1));
 		                post.setIdPostagem(rs.getInt(2));
