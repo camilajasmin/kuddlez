@@ -188,7 +188,7 @@ public class DaoServico extends CONEXAO implements CRUDKuddlez<Servico> {
 				pst.setInt(1, id);
 				
 				if(pst.executeUpdate()>0) {
-					msg = "Usuario deletado";
+					msg = "Servico deletado";
 				}
 				else {
 					msg = "Não foi possível deletar este serviço";
