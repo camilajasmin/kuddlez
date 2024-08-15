@@ -103,10 +103,10 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 		
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from usuario where idUsuario=?";
+				String sql = "Select * from usuario where loginUsuario=?";
 				pst = con.prepareStatement(sql);
 				
-				pst.setInt(1,dados.getIdUsuario());
+				pst.setString(1,dados.getLoginUsuario());
 				
 				rs = pst.executeQuery();
 				
