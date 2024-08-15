@@ -11,7 +11,7 @@ public class DaoServico extends CONEXAO implements CRUDKuddlez<Servico> {
 		String msg = "";
 		try {
 			if (abrirConexao()) {
-				String sql = "insert into servico";
+				String sql = "insert into servico(idUsuario, nomeProd, precoProd";
 				
 			} 
 			else {
