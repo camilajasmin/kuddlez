@@ -14,7 +14,7 @@ public class DaoVenda extends CONEXAO implements CRUDKuddlez<Venda> {
 		String msg = "";
 		try {
 			if(abrirConexao()) {
-				String sql = "insert into usuario(nomeCompleto,loginUsuario,senhaUsuario,emailUsuario,telefoneUsuario,enderecoUsuario,cpfUsuario,cnpjUsuario,dataNascimentoUsuario) values (?,?,?,?,?,?,?,?,?)";
+				String sql = "insert into venda(nomeCompleto,loginUsuario,senhaUsuario,emailUsuario,telefoneUsuario,enderecoUsuario,cpfUsuario,cnpjUsuario,dataNascimentoUsuario) values (?,?,?,?,?,?,?,?,?)";
 				pst = con.prepareStatement(sql);
 				
 				pst.setString(1,dados.getNomeCompleto());
