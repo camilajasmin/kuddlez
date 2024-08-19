@@ -37,7 +37,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 				}
 			}
 				catch(SQLException se) {
-					msg = "Erroa ao tentar cadastrar"+se.getMessage();
+					msg = "Erro ao tentar cadastrar"+se.getMessage();
 				}
 				catch(Exception e) {
 					msg = "Erro inesperado"+e.getMessage();
