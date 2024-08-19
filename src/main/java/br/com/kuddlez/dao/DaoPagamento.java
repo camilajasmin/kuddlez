@@ -167,39 +167,6 @@ public class DaoPagamento extends CONEXAO implements CRUDKuddlez<Pagamento> {
 
 	@Override
 	public String apagar(Integer id) {
-		String msg = "";
-		
-		try {
-			if(abrirConexao()) {
-				String sql = "delete from pagamento where id pagamento=?";
-				
-				pst = con.prepareStatement(sql);
-				
-				pst.setInt(1, id);
-				
-				if(pst.executeUpdate()> 0) {
-					msg = "Pagamento apagado";
-				}
-				else {
-					msg = "Não foi possível apagar";
-				}
-			}
-			else {
-				msg = "Não foi possível estabelecer a conexão com o banco de dados";
-			}
-				
-		}
-			catch(SQLException se) {
-				msg = "Erro ao apagar. "+se.getMessage();
-			}
-			catch(Exception e){
-				msg = "Erro inesperado. "+e.getMessage();
-			}
-			finally {
-				fecharConexao();
-			}
-			
-			return msg;
+		return null;	
 	}
-
 }
