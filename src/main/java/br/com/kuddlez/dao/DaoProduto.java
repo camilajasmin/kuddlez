@@ -92,7 +92,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 		Produto prod = null;
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from produtos where idProduto=? or idUsuario=? or nomeProduto=? ";
+				String sql = "Select * from produtos where idProduto=? or idUsuario=? or nomeProd=? ";
 				pst = con.prepareStatement(sql);
 				
 				pst.setInt(1,dados.getIdProduto());
