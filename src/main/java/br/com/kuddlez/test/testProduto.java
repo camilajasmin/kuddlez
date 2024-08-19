@@ -5,12 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import br.com.kuddlez.dao.DaoProduto;
-import br.com.kuddlez.dao.DaoUsuario;
 import br.com.kuddlez.dominio.Produto;
 
 public class testProduto {
-	private DaoUsuario daousuario;
-	private DaoProduto daouproduto;
+
 	@Test
 	public void testCadastrar() {
 		Produto prod = new Produto();

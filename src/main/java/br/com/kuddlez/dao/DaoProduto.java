@@ -13,7 +13,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 		String msg = "";
 		try {
 			if(abrirConexao()) {
-				String sql = "insert into produtos(idUsuario,nomeProd,precoProd,descProd,qtdProd,dataCadastroProd,categoriaProd,possiTrocaProd)values(?,?,?,?,?,?,?)";
+				String sql = "insert into produtos(idUsuario,nomeProd,precoProd,descProd,qtdProd,dataCadastroProd,categoriaProd,possiTrocaProd)values(?,?,?,?,?,?,?,?)";
 				pst = con.prepareStatement(sql);
 				
 				pst.setInt(1,dados.getIdUsuario());
