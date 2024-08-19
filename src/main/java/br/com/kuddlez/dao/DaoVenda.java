@@ -14,18 +14,16 @@ public class DaoVenda extends CONEXAO implements CRUDKuddlez<Venda> {
 		String msg = "";
 		try {
 			if(abrirConexao()) {
-				String sql = "insert into venda(nomeCompleto,loginUsuario,senhaUsuario,emailUsuario,telefoneUsuario,enderecoUsuario,cpfUsuario,cnpjUsuario,dataNascimentoUsuario) values (?,?,?,?,?,?,?,?,?)";
+				String sql = "insert into venda(idProduto, vendedorVenda,compradorVenda,formaPagamentoVenda,valorTotalVenda,statusVenda) values (?,?,?,?,?,?)";
+				
 				pst = con.prepareStatement(sql);
 				
-				pst.setString(1,dados.getNomeCompleto());
-				pst.setString(2,dados.getLoginUsuario());
-				pst.setString(3,dados.getSenhaUsuario());
-				pst.setString(4,dados.getEmailUsuario());
-				pst.setString(5,dados.getTelefoneUsuario());
-				pst.setString(6, dados.getEnderecoUsuario());
-				pst.setString(7,dados.getCpfUsuario());
-				pst.setString(8,dados.getCnpjUsuario());
-				pst.setString(9,dados.getDataNascimentoUsuario());
+				pst.setInt(1,dados.getIdProduto());
+				pst.setInt(2,dados.getVendedorVenda());
+				pst.setInt(3,dados.getCompradorVenda());
+				pst.setString(4,dados.getFormaPagamentoVenda());
+				pst.setDouble(5, dados.getValorTotalVenda());
+				pst.setString(6,dados.getStatusVenda());
 				
 				if(pst.executeUpdate()>0) {
 					msg = "Cadastro realizado";
@@ -54,28 +52,25 @@ public class DaoVenda extends CONEXAO implements CRUDKuddlez<Venda> {
 
 	@Override
 	public List<Venda> listar() {
-		List<Usuario> lista = new ArrayList<Usuario>();
+		List<Venda> lista = new ArrayList<Venda>();
 		try {
 			if(abrirConexao()) {
-				String sql = "select * from usuario";
+				String sql = "select * from venda";
 				pst = con.prepareStatement(sql);
 				rs = pst.executeQuery();
 				
 				while(rs.next()) {
-					Usuario us = new Usuario();
-					us.setIdUsuario(rs.getInt(1));
-					us.setNomeCompleto(rs.getString(2));
-					us.setLoginUsuario(rs.getString(3));
-					us.setSenhaUsuario(rs.getString(4));
-					us.setEmailUsuario(rs.getString(5));
-					us.setTelefoneUsuario(rs.getString(6));
-					us.setEnderecoUsuario(rs.getString(7));
-					us.setCpfUsuario(rs.getString(8));
-					us.setCnpjUsuario(rs.getString(9));
-					us.setDataNascimentoUsuario(rs.getString(10));
-					us.setCriadoem(rs.getDate(11));
+					Venda venda = new Venda();
+					venda.setIdVenda(rs.getInt(1));
+					venda.setIdProduto(rs.getInt(2));
+					venda.setVendedorVenda(rs.getInt(3));
+					venda.setCompradorVenda(rs.getInt(4));
+					venda.setDataHoraVenda(rs.getDate(5));
+					venda.setFormaPagamentoVenda(rs.getString(6));
+					venda.setValorTotalVenda(rs.getDouble(7));
+					venda.setStatusVenda(rs.getString(8));
 					
-					lista.add(us);
+					lista.add(venda);
 				}
 			}
 			
@@ -98,32 +93,29 @@ public class DaoVenda extends CONEXAO implements CRUDKuddlez<Venda> {
 
 	@Override
 	public Venda pesquisar(Venda dados) {
-Usuario us = new Usuario();
+     Venda venda = new Venda();
 		
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from usuario where loginUsuario=?";
+				String sql = "Select * from venda where idVenda=?";
 				pst = con.prepareStatement(sql);
 				
-				pst.setString(1,dados.getLoginUsuario());
+				pst.setInt(1,dados.getIdVenda());
 				
 				rs = pst.executeQuery();
 				
 				if(rs.next()) {
-					us.setIdUsuario(rs.getInt(1));
-					us.setNomeCompleto(rs.getString(2));
-					us.setLoginUsuario(rs.getString(3));
-					us.setSenhaUsuario(rs.getString(4));
-					us.setEmailUsuario(rs.getString(5));
-					us.setTelefoneUsuario(rs.getString(6));
-					us.setEnderecoUsuario(rs.getString(7));
-					us.setCpfUsuario(rs.getString(8));
-					us.setCnpjUsuario(rs.getString(9));
-					us.setDataNascimentoUsuario(rs.getString(10));
-					us.setCriadoem(rs.getDate(11));
+					venda.setIdVenda(rs.getInt(1));
+					venda.setIdProduto(rs.getInt(2));
+					venda.setVendedorVenda(rs.getInt(3));
+					venda.setCompradorVenda(rs.getInt(4));
+					venda.setDataHoraVenda(rs.getDate(5));
+					venda.setFormaPagamentoVenda(rs.getString(6));
+					venda.setValorTotalVenda(rs.getDouble(7));
+					venda.setStatusVenda(rs.getString(8));
 				}
 				 else {
-			            System.out.println("Usuário não encontrado para ID: " + dados.getIdUsuario());
+			            System.out.println("Venda não encontrado para ID: " + dados.getIdVenda());
 			        }
 				
 			}
@@ -142,7 +134,7 @@ Usuario us = new Usuario();
 			finally {
 				fecharConexao();
 			}		
-		return us;
+		return venda;
 	}
 
 	@Override
@@ -151,15 +143,11 @@ String msg = "";
 		
 		try {
 			if(abrirConexao()) {
-				String sql = "Update usuario set nomeCompleto=?,loginUsuario=?,emailUsuario=?,telefoneUsuario=?,enderecoUsuario=? where idUsuario=?";
+				String sql = "Update venda set statusVenda where idVenda=?";
 				pst = con.prepareStatement(sql);
 				
-				pst.setString(1,dados.getNomeCompleto());
-				pst.setString(2,dados.getLoginUsuario());
-				pst.setString(3, dados.getEmailUsuario());
-				pst.setString(4,dados.getTelefoneUsuario());
-				pst.setString(5,dados.getEnderecoUsuario());
-				pst.setInt(6,dados.getIdUsuario());
+				pst.setString(1,dados.getStatusVenda());
+				pst.setInt(6,dados.getIdVenda());
 				
 				if(pst.executeUpdate()>0) {
 					msg = "Atualização realizada";
@@ -187,36 +175,6 @@ String msg = "";
 
 	@Override
 	public String apagar(Integer id) {
-		String msg = "";
-		try {
-			if(abrirConexao()) {
-				String sql = "delete from usuario where idUsuario=?";
-				pst = con.prepareStatement(sql);
-				pst.setInt(1, id);
-				
-				if(pst.executeUpdate()>0) {
-					msg = "Usuario deletado";
-				}
-				else {
-					msg = "Não foi possível apagar o usuário";
-				}
-			}
-			else {
-				msg = "Não foi possível estabelecer a conexão com o banco";
-			}
-		}
-		
-		catch(SQLException se){
-			msg = "Erro ao apagar" + se.getMessage();
-		}
-		catch(Exception e) {
-			msg = "Erro inesperado" + e.getMessage();
-		}
-		finally {
-			fecharConexao();
-		}
-		return msg;
+		return null;
 	}
 	}
-
-}
