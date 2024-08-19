@@ -13,21 +13,21 @@ import br.com.kuddlez.dominio.Produto;
 
 public class testProduto {
 
-//	@Test
-//	public void testCadastrar() {
-//		Produto prod = new Produto();
-//		prod.setIdUsuario(1);
-//		prod.setNomeProd("Produto teste");
-//		prod.setPrecoProd(10.9);
-//		prod.setDescProd("Descrição");
-//		prod.setQtdProd(2);
-//		prod.setDataCadastroProd(new java.sql.Date(System.currentTimeMillis()));
-//		prod.setCategoriaProd("Categoria");
-//		prod.setPossiTrocaProd(true);
-//		
-//		DaoProduto daopr = new DaoProduto();
-//		assertEquals("Produto cadastrado", daopr.Cadastrar(prod));
-//	}
+	@Test
+	public void testCadastrar() {
+		Produto prod = new Produto();
+		prod.setIdUsuario(1);
+		prod.setNomeProd("Produto para cavalos");
+		prod.setPrecoProd(100.9);
+		prod.setDescProd("Para pelos brilhosos e sedosos");
+		prod.setQtdProd(2);
+		prod.setDataCadastroProd(new java.sql.Date(System.currentTimeMillis()));
+		prod.setCategoriaProd("Banho e tosa");
+		prod.setPossiTrocaProd(true);
+		
+		DaoProduto daopr = new DaoProduto();
+		assertEquals("Produto cadastrado", daopr.Cadastrar(prod));
+	}
 //}
 //	@Test 
 //	public void testListar(){
@@ -36,7 +36,7 @@ public class testProduto {
 //		List<Produto> resultado = new ArrayList<Produto>();
 //		assertEquals(resultado, daopr.listar());
 //		
-////	}
+//	}
 //	@Test
 //	public void testPesquisa() {
 //		DaoProduto daopro = new DaoProduto();
@@ -63,6 +63,11 @@ public class testProduto {
 //		DaoProduto daopro = new DaoProduto();
 //		assertEquals("Atualização dos produtos realizada", daopro.atualizar(prod));
 //	
+//	}
+//	@Test
+//	public void testApagar() {
+//		DaoProduto daopr = new DaoProduto();
+//		assertEquals("Produto apagado com sucesso",daopr.apagar(1));
 //	}
 
 }
