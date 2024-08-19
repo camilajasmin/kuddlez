@@ -3,18 +3,18 @@ package br.com.kuddlez.dominio;
 import java.sql.Date;
 
 public class Notificacao {
-	private Integer idNot;
+	private Integer idNotificacoes;
 	private Integer idUsuario;
 	private Date dataHoraNot;
 	private String conteudoNot;
 	private String tipoNot;
 	private Boolean lidaNot;
 	
-	public Integer getIdNot() {
-		return idNot;
+	public Integer getIdNotificacoes() {
+		return idNotificacoes;
 	}
-	public void setIdNot(Integer idNot) {
-		this.idNot = idNot;
+	public void setIdNotificacoes(Integer idNotificacoes) {
+		this.idNotificacoes = idNotificacoes;
 	}
 	public Integer getIdUsuario() {
 		return idUsuario;
