@@ -141,7 +141,7 @@ public class DaoPagamento extends CONEXAO implements CRUDKuddlez<Pagamento> {
 				pst.setInt(2,dados.getIdPagamento());
 				
 				if(pst.executeUpdate()> 0) {
-					msg = "Atualização realizada";
+					msg = "Atualização feita";
 				}
 				else {
 					msg = "Não foi possível atualização";
