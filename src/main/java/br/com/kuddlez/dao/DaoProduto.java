@@ -13,16 +13,17 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 		String msg = "";
 		try {
 			if(abrirConexao()) {
-				String sql = "insert into produtos(nomeProd,precoProd,descProd,qtdProd,dataCadastroProd,categoriaProd,possiTrocaProd)values(?,?,?,?,?,?,?)";
+				String sql = "insert into produtos(idUsuario,nomeProd,precoProd,descProd,qtdProd,dataCadastroProd,categoriaProd,possiTrocaProd)values(?,?,?,?,?,?,?,?)";
 				pst = con.prepareStatement(sql);
 				
-				pst.setString(1,dados.getNomeProd());
-				pst.setDouble(2,dados.getPrecoProd());
-				pst.setString(3,dados.getDescProd());
-				pst.setInt(4,dados.getQtdProd());
-				pst.setDate(5,dados.getDataCadastroProd());
-				pst.setString(6,dados.getCategoriaProd());
-				pst.setBoolean(7,dados.getPossiTrocaProd());
+				pst.setInt(1,dados.getIdUsuario());
+				pst.setString(2,dados.getNomeProd());
+				pst.setDouble(3,dados.getPrecoProd());
+				pst.setString(4,dados.getDescProd());
+				pst.setInt(5,dados.getQtdProd());
+				pst.setDate(6,dados.getDataCadastroProd());
+				pst.setString(7,dados.getCategoriaProd());
+				pst.setBoolean(8,dados.getPossiTrocaProd());
 				
 				if(pst.executeUpdate() > 0) {
 					msg = "Produto cadastrado";
@@ -36,7 +37,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 				}
 			}
 				catch(SQLException se) {
-					msg = "Erroa ao tentar cadastrar"+se.getMessage();
+					msg = "Erro ao tentar cadastrar"+se.getMessage();
 				}
 				catch(Exception e) {
 					msg = "Erro inesperado"+e.getMessage();
@@ -91,7 +92,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 		Produto prod = null;
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from produtos where idProduto=? or idUsuario=? or nomeProduto=? ";
+				String sql = "Select * from produtos where idProduto=? or idUsuario=? or nomeProd=? ";
 				pst = con.prepareStatement(sql);
 				
 				pst.setInt(1,dados.getIdProduto());
