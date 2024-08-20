@@ -12,6 +12,7 @@ public class Produto {
 	private Date dataCadastroProd;
 	private String categoriaProd;
 	private Boolean possiTrocaProd;
+	private String imgProd;
 	
 	public Integer getIdProduto() {
 		return idProduto;
@@ -66,6 +67,12 @@ public class Produto {
 	}
 	public void setPossiTrocaProd(Boolean possiTrocaProd) {
 		this.possiTrocaProd = possiTrocaProd;
+	}
+	public String getImgProd() {
+		return imgProd;
+	}
+	public void setImgProd(String imgProd) {
+		this.imgProd = imgProd;
 	}
 
 }
