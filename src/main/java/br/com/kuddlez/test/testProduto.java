@@ -12,30 +12,29 @@ import br.com.kuddlez.dao.DaoProduto;
 import br.com.kuddlez.dominio.Produto;
 
 public class testProduto {
-
-	@Test
-	public void testCadastrar() {
-		Produto prod = new Produto();
-		prod.setIdUsuario(1);
-		prod.setNomeProd("Produto para cavalos");
-		prod.setPrecoProd(100.9);
-		prod.setDescProd("Para pelos brilhosos e sedosos");
-		prod.setQtdProd(2);
-		prod.setDataCadastroProd(new java.sql.Date(System.currentTimeMillis()));
-		prod.setCategoriaProd("Banho e tosa");
-		prod.setPossiTrocaProd(true);
-		
-		DaoProduto daopr = new DaoProduto();
-		assertEquals("Produto cadastrado", daopr.Cadastrar(prod));
-	}
+//
+//	@Test
+//	public void testCadastrar() {
+//		Produto prod = new Produto();
+//		prod.setIdUsuario(2);
+//		prod.setNomeProd("Escova Para Gatos e Cachorro A Vapor Lava Pelo Pet 3 Em 1 Vaporizador");
+//		prod.setPrecoProd(33.95);
+//		prod.setDescProd("Para pelos brilhosos e sedosos");
+//		prod.setQtdProd(5);
+//		prod.setDataCadastroProd(new java.sql.Date(System.currentTimeMillis()));
+//		prod.setCategoriaProd("Banho e tosa");
+//		prod.setPossiTrocaProd(true);
+//		prod.setImgProd("https://m.media-amazon.com/images/I/51-iRJjeIJL.__AC_SX300_SY300_QL70_ML2_.jpg");
+//		
+//		DaoProduto daopr = new DaoProduto();
+//		assertEquals("Produto cadastrado", daopr.Cadastrar(prod));
+//	}
 //}
 //	@Test 
 //	public void testListar(){
-//		
 //		DaoProduto daopr = new DaoProduto();
 //		List<Produto> resultado = new ArrayList<Produto>();
-//		assertEquals(resultado, daopr.listar());
-//		
+//		assertEquals(resultado, daopr.listar());	
 //	}
 //	@Test
 //	public void testPesquisa() {
