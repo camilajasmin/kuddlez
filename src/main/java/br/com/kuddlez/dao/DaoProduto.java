@@ -13,7 +13,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 		String msg = "";
 		try {
 			if(abrirConexao()) {
-				String sql = "insert into produtos(idUsuario,nomeProd,precoProd,descProd,qtdProd,dataCadastroProd,categoriaProd,possiTrocaProd)values(?,?,?,?,?,?,?,?)";
+				String sql = "insert into produtos(idUsuario,nomeProd,precoProd,descProd,qtdProd,dataCadastroProd,categoriaProd,possiTrocaProd,imgProd)values(?,?,?,?,?,?,?,?,?)";
 				pst = con.prepareStatement(sql);
 				
 				pst.setInt(1,dados.getIdUsuario());
@@ -24,6 +24,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 				pst.setDate(6,dados.getDataCadastroProd());
 				pst.setString(7,dados.getCategoriaProd());
 				pst.setBoolean(8,dados.getPossiTrocaProd());
+				pst.setString(9,dados.getImgProd());;
 				
 				if(pst.executeUpdate() > 0) {
 					msg = "Produto cadastrado";
@@ -67,6 +68,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 					prod.setDataCadastroProd(rs.getDate(7));
 					prod.setCategoriaProd(rs.getString(8));
 					prod.setPossiTrocaProd(rs.getBoolean(9));
+					prod.setImgProd(rs.getString(10));
 					
 					lista.add(prod);
 				}
@@ -112,6 +114,7 @@ public class DaoProduto extends CONEXAO implements CRUDKuddlez<Produto> {
 					prod.setDataCadastroProd(rs.getDate(7));
 					prod.setCategoriaProd(rs.getString(8));
 					prod.setPossiTrocaProd(rs.getBoolean(9));
+					prod.setImgProd(rs.getString(10));
 					
 				}
 			}
