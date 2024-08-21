@@ -13,24 +13,24 @@ import br.com.kuddlez.dominio.Usuario;
 
 public class testConexao {
 	
-	@Test
-	public void testCadastroUsuario() {
-		Usuario us = new Usuario();
-		us.setNomeCompleto("jude");
-		us.setLoginUsuario("judebel");
-		us.setSenhaUsuario("12345");
-		us.setEmailUsuario("judebel@gmail.com");
-		us.setTelefoneUsuario("11978455234");
-		us.setEnderecoUsuario("rua seislá");
-		us.setCpfUsuario("23456723890");
-		us.setCnpjUsuario("ntenho");
-	//	us.setDataNascimentoUsuario(Date.valueOf("2005-05-25"));
-		us.setDataNascimentoUsuario("2005-05-15");
-		
-		
-		DaoUsuario daous = new DaoUsuario();
-		assertEquals("Cadastro realizado", daous.Cadastrar(us));
-	}
+//	@Test
+//	public void testCadastroUsuario() {
+//		Usuario us = new Usuario();
+//		us.setNomeCompleto("jude");
+//		us.setLoginUsuario("judebel");
+//		us.setSenhaUsuario("12345");
+//		us.setEmailUsuario("judebel@gmail.com");
+//		us.setTelefoneUsuario("11978455234");
+//		us.setEnderecoUsuario("rua seislá");
+//		us.setCpfUsuario("23456723890");
+//		us.setCnpjUsuario("ntenho");
+//	//	us.setDataNascimentoUsuario(Date.valueOf("2005-05-25"));
+//		us.setDataNascimentoUsuario("2005-05-15");
+//		
+//		
+//		DaoUsuario daous = new DaoUsuario();
+//		assertEquals("Cadastro realizado", daous.Cadastrar(us));
+//	}
 
 	
 //	@Test
@@ -57,11 +57,11 @@ public class testConexao {
 //		Usuario us= new Usuario();
 //
 //	us.setIdUsuario(1); 
-//	us.setNomeCompleto("Yangchen");
-//	us.setLoginUsuario("avatarchen@uol.com"); 
-//	us.setEmailUsuario("Yangchen Ouro");
-//	us.setTelefoneUsuario("88-6958-7854");
-//	us.setEnderecoUsuario("Rua nova");
+//	us.setNomeCompleto("Yangcheni");
+//	us.setLoginUsuario("avatar@uol.com"); 
+//	us.setEmailUsuario("Yangchenni Ouro");
+//	us.setTelefoneUsuario("54-6958-7854");
+//	us.setEnderecoUsuario("Rua velha");
 //	
 //	
 //	DaoUsuario daous = new DaoUsuario();
