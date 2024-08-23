@@ -124,7 +124,7 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 					us.setCriadoem(rs.getDate(11));
 				}
 				 else {
-			            System.out.println("Usuário não encontrado para ID: " + dados.getIdUsuario());
+			            System.out.println("Usuário não encontrado para login: " + dados.getLoginUsuario());
 			        }
 				
 			}
