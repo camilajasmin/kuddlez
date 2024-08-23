@@ -24,6 +24,5 @@ public class testVenda {
 		assertEquals("Cadastro realizado",daoven.Cadastrar(ven));
 		
 	}
-	
 
 }
