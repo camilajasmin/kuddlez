@@ -90,14 +90,13 @@ public class DaoPagamento extends CONEXAO implements CRUDKuddlez<Pagamento> {
 
 	@Override
 	public Pagamento pesquisar(Pagamento dados) {
-		Pagamento pag = null;
+		Pagamento pag = new Pagamento();
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from pagamento where idPagamento=? or idVenda=?";
+				String sql = "Select * from pagamento where idPagamento=? ";
 				pst = con.prepareStatement(sql);
 				
 				pst.setInt(1,dados.getIdPagamento());
-				pst.setInt(2,dados.getIdVenda());
 				
 				rs = pst.executeQuery();
 				
@@ -112,6 +111,10 @@ public class DaoPagamento extends CONEXAO implements CRUDKuddlez<Pagamento> {
 					pag.setValorParcelas(rs.getDouble(6));
 					pag.setStatusPag(rs.getString(7));
 				}
+				 else {
+			            System.out.println("Pagamento não encontrado para ID: " + dados.getIdPagamento());
+			        }
+				
 			}
 			else {
 				new Exception ("Não foi possível estabelecer a conexão com o banco");

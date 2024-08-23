@@ -139,39 +139,39 @@ public class DaoVenda extends CONEXAO implements CRUDKuddlez<Venda> {
 
 	@Override
 	public String atualizar(Venda dados) {
-String msg = "";
-		
-		try {
-			if(abrirConexao()) {
-				String sql = "Update venda set statusVenda where idVenda=?";
-				pst = con.prepareStatement(sql);
-				
-				pst.setString(1,dados.getStatusVenda());
-				pst.setInt(6,dados.getIdVenda());
-				
-				if(pst.executeUpdate()>0) {
-					msg = "Atualização realizada";
+	String msg = "";
+			
+			try {
+				if(abrirConexao()) {
+					String sql = "Update venda set statusVenda=? where idVenda=?";
+					pst = con.prepareStatement(sql);
+					
+					pst.setString(1,dados.getStatusVenda());
+					pst.setInt(2,dados.getIdVenda());
+					
+					if(pst.executeUpdate() > 0) {
+						msg = "Atualização realizada";
+					}
+					else {
+						msg = "Não foi possível atualizar";
+					}
 				}
 				else {
-					msg = "Não foi possível atualizar";
+					msg = "Não foi possível estabelecer a conexão com o banco de dados";
 				}
+				
 			}
-			else {
-				msg = "Não foi possível estabelecer a conexão com o banco de dados";
+			catch(SQLException se) {
+				msg = "Erro na atualização."+se.getMessage();
 			}
-			
+			catch(Exception e) {
+				msg = "Erro inesperado" +e.getMessage();
+			}
+			finally {
+				fecharConexao();
+			}
+			return msg;
 		}
-		catch(SQLException se) {
-			msg = "Erro na atualização."+se.getMessage();
-		}
-		catch(Exception e) {
-			msg = "Erro inesperado" +e.getMessage();
-		}
-		finally {
-			fecharConexao();
-		}
-		return msg;
-	}
 
 	@Override
 	public String apagar(Integer id) {

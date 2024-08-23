@@ -17,14 +17,14 @@ public class testProduto {
 //	public void testCadastrar() {
 //		Produto prod = new Produto();
 //		prod.setIdUsuario(2);
-//		prod.setNomeProd("Escova Para Gatos e Cachorro A Vapor Lava Pelo Pet 3 Em 1 Vaporizador");
-//		prod.setPrecoProd(33.95);
-//		prod.setDescProd("Para pelos brilhosos e sedosos");
-//		prod.setQtdProd(5);
+//		prod.setNomeProd("Roupa de cachorro");
+//		prod.setPrecoProd(50.0);
+//		prod.setDescProd("Para seu animal ficar mais confortavél");
+//		prod.setQtdProd(1);
 //		prod.setDataCadastroProd(new java.sql.Date(System.currentTimeMillis()));
-//		prod.setCategoriaProd("Banho e tosa");
+//		prod.setCategoriaProd("Roupas e acessórios");
 //		prod.setPossiTrocaProd(true);
-//		prod.setImgProd("https://m.media-amazon.com/images/I/51-iRJjeIJL.__AC_SX300_SY300_QL70_ML2_.jpg");
+//		prod.setImgProd(("https://m.media-amazon.com/images/I/61KrqM9WyHL.__AC_SY300_SX300_QL70_ML2_.jpg"));
 //		
 //		DaoProduto daopr = new DaoProduto();
 //		assertEquals("Produto cadastrado", daopr.Cadastrar(prod));
@@ -41,19 +41,19 @@ public class testProduto {
 //		DaoProduto daopro = new DaoProduto();
 //		Produto prod = new Produto();
 //		
-//		prod.setIdProduto(1);
+//		prod.setIdProduto(2);
 //		prod.setIdUsuario(1);
-//		prod.setNomeProd("Produto teste");
+//		prod.setNomeProd("Produto para cavalos");
 //		Produto resultado = daopro.pesquisar(prod);
 //		assertNotNull("Produto não encontrado", resultado);
-//		assertEquals("Produto teste", resultado.getNomeProd());
+//		assertEquals("Produto para cavalos", resultado.getNomeProd());
 //	}
 //	@Test 
 //	public void testAatualizar() {
 //		Produto prod = new Produto();
 //		
-//		prod.setIdProduto(1);
-//		prod.setNomeProd("Produto para pelo cachorro");
+//		prod.setIdProduto(2);
+//		prod.setNomeProd("Produto para pelo  de cachorro");
 //		prod.setPrecoProd(19.9);
 //		prod.setDescProd("Para pelos lindos e brilhosos");
 //		prod.setQtdProd(5);
@@ -66,7 +66,7 @@ public class testProduto {
 //	@Test
 //	public void testApagar() {
 //		DaoProduto daopr = new DaoProduto();
-//		assertEquals("Produto apagado com sucesso",daopr.apagar(1));
+//		assertEquals("Produto apagado com sucesso",daopr.apagar(2));
 //	}
 
 }
