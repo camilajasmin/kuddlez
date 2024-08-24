@@ -1,3 +1,4 @@
+
 package br.com.kuddlez.test;
 
 import static org.junit.Assert.assertEquals;
@@ -16,14 +17,14 @@ public class testConexao {
 //	@Test
 //	public void testCadastroUsuario() {
 //		Usuario us = new Usuario();
-//		us.setNomeCompleto("jude");
-//		us.setLoginUsuario("judebel");
-//		us.setSenhaUsuario("12345");
-//		us.setEmailUsuario("judebel@gmail.com");
-//		us.setTelefoneUsuario("11978455234");
-//		us.setEnderecoUsuario("rua seislá");
-//		us.setCpfUsuario("23456723890");
-//		us.setCnpjUsuario("ntenho");
+//		us.setNomeCompleto("camila");
+//		us.setLoginUsuario("camila.jechauca");
+//		us.setSenhaUsuario("56789");
+//		us.setEmailUsuario("camilajasmin@gmail.com");
+//		us.setTelefoneUsuario("11978108234");
+//		us.setEnderecoUsuario("tatuapé");
+//		us.setCpfUsuario("56491908879");
+//		us.setCnpjUsuario("");
 //	//	us.setDataNascimentoUsuario(Date.valueOf("2005-05-25"));
 //		us.setDataNascimentoUsuario("2005-05-15");
 //		
@@ -33,14 +34,14 @@ public class testConexao {
 //	}
 
 	
-//	@Test
-//	public void testListar() {
-//		DaoUsuario daous = new DaoUsuario();
-//		List<Usuario> resultado = new ArrayList<Usuario>();
-//	    assertEquals(resultado, daous.listar());
-//	}
-//}
-//	
+	@Test
+	public void testListar() {
+		DaoUsuario daous = new DaoUsuario();
+		List<Usuario> resultado = new ArrayList<Usuario>();
+	    assertEquals("avatarchen@uol.com", daous.listar().get(0).getLoginUsuario());
+	}
+}
+	
 	
 //@Test	
 //public void testPesquisa () {
@@ -57,11 +58,11 @@ public class testConexao {
 //		Usuario us= new Usuario();
 //
 //	us.setIdUsuario(1); 
-//	us.setNomeCompleto("Yangcheni");
-//	us.setLoginUsuario("avatar@uol.com"); 
-//	us.setEmailUsuario("Yangchenni Ouro");
-//	us.setTelefoneUsuario("54-6958-7854");
-//	us.setEnderecoUsuario("Rua velha");
+//	us.setNomeCompleto("Yangchen");
+//	us.setLoginUsuario("avatarchen@uol.com"); 
+//	us.setEmailUsuario("Yangchen Ouro");
+//	us.setTelefoneUsuario("88-6958-7854");
+//	us.setEnderecoUsuario("Rua nova");
 //	
 //	
 //	DaoUsuario daous = new DaoUsuario();
@@ -87,9 +88,5 @@ public class testConexao {
 //		DaoUsuario daous = new DaoUsuario();
 //		assertEquals("Atualização realizada", daous.alterarsenha(us));
 //	}
-}
 
-	
-
-	
 

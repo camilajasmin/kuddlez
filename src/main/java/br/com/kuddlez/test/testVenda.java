@@ -44,6 +44,7 @@ public class testVenda {
 //			assertNotNull("Venda não encontrado para ID:", resultado.getIdVenda());
 //			
 //		}
+
 	@Test 
 	public void testAatualizar() {
 		Venda ven = new Venda();
@@ -56,5 +57,18 @@ public class testVenda {
 		assertEquals("Atualização realizada", daoven.atualizar(ven));
 	
 	}
+
+//	@Test 
+//	public void testAatualizar() {
+//		Venda ven = new Venda();
+//		
+//		ven.setIdVenda(1);
+//		ven.setStatusVenda("Em fase de pagamento");
+//	
+//		
+//		DaoVenda daoven = new DaoVenda();
+//		assertEquals("Atualização realizada", daoven.atualizar(ven));
+//	
+//	}
 
 }

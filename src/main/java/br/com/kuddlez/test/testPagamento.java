@@ -1,3 +1,4 @@
+
 package br.com.kuddlez.test;
 
 import static org.junit.Assert.assertEquals;
