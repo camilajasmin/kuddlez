@@ -220,18 +220,23 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 	}
 
 	@Override
-	public boolean login(Usuario dados) {
-		boolean auth = true;
+	public Usuario login(Usuario dados) {
+		Usuario us = new Usuario();
 		try {
 			if(abrirConexao()) {
-				String sql = "select loginUsuario, senhaUsuario from usuario where loginUsuario=? and senhaUsuario=? ";
+				String sql = "select idUsuario, loginUsuario, senhaUsuario from usuario where loginUsuario=? and senhaUsuario=? ";
 				pst = con.prepareStatement(sql);
 				pst.setString(1, dados.getLoginUsuario());
+				pst.setString(2, dados.getSenhaUsuario());
 				
 				rs = pst.executeQuery();
 				
-				if(!rs.next()) {
-					auth = false;
+				if(rs.next()) {
+					us.setIdUsuario(rs.getInt(1));
+					us.setLoginUsuario(rs.getString(2));
+				}
+				else {
+					us =null;
 				}
 			}
 			
@@ -242,7 +247,7 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 		}
 		
 		catch(SQLException se) {
-			auth = false;
+			us = null;
 			new Exception("Erro na Consulta" + se.getMessage());
 		}
 		catch(Exception e) {
@@ -251,8 +256,9 @@ public class DaoUsuario extends CONEXAO implements CRUDUsuario<Usuario>{
 		finally {
 			fecharConexao();
 		}
-		return auth;
+		return us;
 	}
+
 
 	@Override
 	public String alterarsenha(Usuario dados) {

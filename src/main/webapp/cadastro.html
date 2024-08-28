@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="title">
+        <h1 id="titulcad">Cadastre-se</h1>
+    </div>
+    <div class="cadastro_principal">
+        <div class="container_cadastro">
+            <form id="cadastro" action="ServiceCadUser" method="post">
+                <div class="cad_form">
+                    <div class="cadnome">
+                        <label>
+                            <input id="cadtype" type="text" name="Nome" placeholder="Nome Completo" required>
+                        </label>
+                    </div>
+                    <div class="cadlogin">
+                        <label>
+                            <input id="cadtype" type="text" name="login" maxlength="20" placeholder="Crie seu login" required>
+                        </label>
+                    </div>
+                    <div class="cadsenha">
+                        <label>
+                            <input id="cadtype" type="password" name="senha" placeholder="Senha" required>
+                        </label>
+                    </div>
+
+                    <div class="cadEmail">
+                        <label>
+                            <input id="cadtype" type="email" name="email" placeholder="E-mail" required>
+                        </label>
+                    </div>
+
+                    <div class="cadTel">
+                        <label>
+                            <input id="cadtype" type="tel" maxlength="15"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+                               name="telefone" placeholder="Telefone" required>
+                        </label>
+                    </div>
+                    <div class="cadEndereco">
+                        <label>
+                            <input id="cadtype" type="text" name="endereco" maxlength="20" placeholder="Endereço" required>
+                        </label>
+                    </div>
+
+                    <div class="cadCpf">
+                        <label>
+                            <input id="cadtype" type="text" name="cpf" maxlength="11"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+                                placeholder="CPF" required>
+                        </label>
+                    </div>
+
+                    <div class="cadCnpj">
+                        <label>
+                            <input id="cadtype" type="text" name="Cnpj" maxlength="14"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1').replace(/^0[^.]/, '0');"
+                                placeholder="CNPJ">
+                        </label>
+                    </div>
+                    <div class="cadData">
+                        <label> Data de nascimento:<br>
+                            <input id="cadtype" type="date" name="datadeNasc" required>
+                        </label>
+                    </div>
+                    <input type="submit" value="Cadastrar!" />
+                </div>
+
+ 
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

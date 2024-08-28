@@ -1,6 +1,6 @@
 package br.com.kuddlez.dao;
 
 public interface CRUDUsuario <T> extends CRUDKuddlez<T> {
-	boolean login(T dados);
+	T login(T dados);
 	String alterarsenha(T dados);
 }

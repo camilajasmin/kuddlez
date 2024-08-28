@@ -4,13 +4,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.kuddlez.dominio.Servico;
-import br.com.kuddlez.dominio.Usuario;
 
-public class DaoServico extends CONEXAO implements CRUDKuddlez<Servico> {
+import br.com.kuddlez.dominio.ServicoUsuario;
+
+public class DaoServico extends CONEXAO implements CRUDKuddlez<ServicoUsuario> {
 
 	@Override
-	public String Cadastrar(Servico dados) {
+	public String Cadastrar(ServicoUsuario dados) {
 		String msg = "";
 		try {
 			if (abrirConexao()) {
@@ -51,25 +51,24 @@ public class DaoServico extends CONEXAO implements CRUDKuddlez<Servico> {
 	}
 
 	@Override
-	public List<Servico> listar() {
+	public List<ServicoUsuario> listar() {
 		
-		List<Servico> lista = new ArrayList<Servico>();
+		List<ServicoUsuario> lista = new ArrayList<ServicoUsuario>();
 		try {
 			if(abrirConexao()) {
-				String sql = "select * from servico";
+				String sql = "select u.nomeCompleto, s.funcoesServ,s.descServ, s.contatoServ, s.dispoServ, s.valorServ from usuario u inner join servico s on u.idusuario = s.idusuario";
 				pst = con.prepareStatement(sql);
 				rs = pst.executeQuery();
 				
 				while(rs.next()) {
-					Servico serv = new Servico();
-					serv.setIdServico(rs.getInt(1));
-					serv.setIdUsuario(rs.getInt(2));
-					serv.setFuncoesServ(rs.getString(3));
-					serv.setDescServ(rs.getString(4));
-					serv.setContatoServ(rs.getString(5));
-					serv.setDispoServ(rs.getString(6));
-					serv.setValorServ(rs.getString(7));
-					serv.setQtdRealizadosServ(rs.getInt(8));
+					ServicoUsuario serv = new ServicoUsuario();
+					serv.setNomeCompleto(rs.getString(1));
+					serv.setFuncoesServ(rs.getString(2));
+					serv.setDescServ(rs.getString(3));
+					serv.setContatoServ(rs.getString(4));
+					serv.setDispoServ(rs.getString(5));
+					serv.setValorServ(rs.getString(6));
+
 					
 					lista.add(serv);
 				}
@@ -93,15 +92,15 @@ public class DaoServico extends CONEXAO implements CRUDKuddlez<Servico> {
 	}
 
 	@Override
-	public Servico pesquisar(Servico dados) {
-    Servico serv = new Servico();
+	public ServicoUsuario pesquisar(ServicoUsuario dados) {
+    ServicoUsuario serv = new ServicoUsuario();
   
 		try {
 			if(abrirConexao()) {
-				String sql = "Select * from servico where funcoesServ=?";
+				String sql = "Select * from servico where idUsuario=?";
 				pst = con.prepareStatement(sql);
 				
-				pst.setString(1,dados.getFuncoesServ());
+				pst.setInt(1,dados.getIdUsuario());
 				
 				rs = pst.executeQuery();
 				
@@ -139,7 +138,7 @@ public class DaoServico extends CONEXAO implements CRUDKuddlez<Servico> {
 		}
 
 	@Override
-	public String atualizar(Servico dados) {
+	public String atualizar(ServicoUsuario dados) {
      String msg = "";
 		
 		try {

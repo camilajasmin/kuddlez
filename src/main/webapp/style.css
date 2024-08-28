@@ -1,0 +1,1048 @@
+@font-face {
+    font-family: especial;
+    src: url(fonte/Darling\ Coffee.otf);
+}
+
+@font-face {
+    font-family: normal;
+    src: url(fonte/TT\ Interphases\ Pro\ Mono\ Trial\ Bold.ttf)
+}
+
+@font-face {
+    font-family: nova;
+    src: url(fonte/Hey\ Comic.otf);
+}
+
+:root {
+    --cor1: rgba(242, 230, 247, 0.986);
+    --cor2: #ccc0d6;
+    --cor3: #b296d9;
+    --cor4: #574f73;
+    --cor5: #ded3e3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/**********PÁGINA LOGIN********/
+body {
+    background-color: var(--cor1)
+}
+
+/*Titulo*/
+#titulo h2 {
+    font-size: 90px;
+    color: #240046;
+    font-family: especial;
+    text-align: center;
+    margin-bottom: 70px;
+    padding-top: 150px;
+}
+
+/*classe geral*/
+.container-img {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 550px;
+    height: 400px;
+    background-color: var(--cor3);
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 0 2em #240046;
+}
+
+/*classe da imagem que vai ficar ao lado do form*/
+.container-img img {
+    height: 300px;
+    padding: auto;
+    margin: 10px 0px
+}
+
+#login {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid --cor4;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: normal;
+    background-color: var(--cor1);
+}
+
+input[type="submit"] {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    font-family: especial;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.mensagem {
+    padding-top: 10px;
+    font-family: normal;
+
+}
+
+.mensagem a {
+    font-family: normal;
+}
+
+.senha-container {
+    position: relative;
+}
+
+.senha-container i {
+    cursor: pointer;
+    position: absolute;
+    left: 230px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--cor3);
+    pointer-events: visible;
+}
+
+.senha-container i:hover {
+    color: var(--cor4);
+}
+* *******CADASTRO**** */
+
+#titulcad {
+    margin: 10px;
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+    font-size: 4.5rem;
+    color: #240046;
+    font-family: especial;
+}
+
+.cadastro_principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 100px;
+    height: auto;
+}
+
+.container_cadastro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor3);
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    margin: auto;
+
+}
+
+input#cadtype {
+    padding: 10px;
+    margin: 10px 0;
+    margin-left: -10px;
+    border: 2px solid --cor4;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: normal;
+    background-color: var(--cor1);
+}
+
+.cadData label {
+    font-family: normal;
+    margin: 10px 0px;
+    margin-left: -10px;
+}
+.continue-button {
+    width: 100%;
+    margin-top: 2rem; 
+}
+
+.continue-button button {
+    width: 100%;
+    background-color: var(--cor4);
+    padding: 0.75rem; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem; 
+    color: #fff;
+    text-align: center;
+    font-family: especial;
+}
+
+.continue-button button:hover {
+    background-color: #4a3b5d;
+}
+
+.continue-button a {
+    text-decoration: none;
+    color: var(--cor1);
+}
+
+/*PÁGINA HOME--------------------------*/
+/*header banner topo*/
+#menuInicial {
+    width: 1350px;
+    justify-content: space-between;
+}
+
+.menu {
+    font-family: normal;
+    list-style: none;
+    color: var(--cor4);
+    display: flex;
+    float: left;
+}
+
+.menu li {
+    padding: 3px;
+    margin: 5px;
+    font-size: 1.2em;
+
+}
+
+.menu li a {
+    color: var(--cor4);
+    text-decoration: none;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+    color: #ccc0d6;
+}
+
+#menuInicial,
+.bannerTopo {
+    margin: 30px auto 20px auto;
+    display: flex;
+}
+
+.bannerTopo {
+    width: 1400px;
+    height: 500px;
+    border: 5px solid var(--cor3);
+    border-radius: 30px;
+    background-color: var(--cor4);
+    justify-content: space-around;
+    box-shadow: 0px 5px 15px black;
+}
+
+.bannerTopo img {
+    height: 796px;
+}
+
+.bannerTopo h1 {
+    font-family: especial;
+    color: beige;
+    font-size: 10.0em;
+    margin: auto;
+}
+
+/*conteúdo texto section main*/
+main,
+.subAreaCtt,
+.tituloContato h1,
+.introPage,
+.areaAnuncio {
+    width: 1320px;
+    margin: 30px auto 20px auto;
+}
+
+.tituloMain {
+    font-size: 2.6em;
+    margin: 40px 0px 20px 0px;
+    font-family: especial;
+    color: var(--cor1);
+    text-shadow: 0px -1px #240046, 1px 0px #240046, 0px 1px #240046, -1px 0px #240046;
+}
+
+.textoMain {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.0em;
+    color: var(--cor4);
+}
+
+/*sections*/
+section {
+    margin: 25px 0px 25px 0px;
+    font-size: 1.1em;
+    width: 800px;
+    border: 1px solid #240046;
+    padding: 25px;
+    background-color: #574f73;
+    box-shadow: 0px 5px 15px black;
+}
+
+section p {
+    color: beige;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+#tituloSection,
+#tituloSection2,
+.tituloContato {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 1.4em;
+    color: #ccc0d6;
+    margin: 6px 0px 6px 0px;
+    text-shadow: 0px -1px #240046, 1px 0px #240046, 0px 1px #240046, -1px 0px #240046;
+}
+
+#servico_petcho {
+    border-radius: 0px 15px;
+}
+
+#servico_petcho2 {
+    border-radius: 15px 0px;
+}
+
+#tituloSection2,
+#sec2 {
+    text-align: end;
+}
+
+#sectionSec {
+    width: 1320px;
+    justify-content: end;
+    display: flex;
+    padding: 0px;
+    margin-top: 2px;
+}
+
+/*galeria*/
+.wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.image {
+    height: 300px;
+    position: relative;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px black
+}
+
+.image img {
+    height: 300px;
+    display: block;
+    margin: auto;
+}
+
+.contentio {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.contentio:hover {
+    opacity: 1;
+}
+
+.contentio h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: beige;
+    text-align: center;
+    text-shadow: 3px 2px 2px black;
+}
+
+.contentio p {
+    color: beige;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: .8em;
+    margin: 3px auto 3px auto;
+    opacity: 50%;
+    text-align: center;
+}
+
+
+
+/*ÁREA DE CONTATO E FOOTER*/
+.areaContato {
+    
+    height: 450px;
+    background-color: #240046;
+}
+
+.subAreaCtt {
+    justify-content: space-between;
+    display: flex;
+}
+
+.colunaCtt {
+    /* background-color: chocolate;*/
+    width: 300px;
+    height: 300px;
+}
+
+.colunaCtt h4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #ccc0d6;
+    opacity: 50%;
+    margin-bottom: 15px;
+}
+
+.colunaCtt img {
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.colunaCtt li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5px;
+    list-style: none;
+    color: beige;
+    opacity: 60%;
+}
+
+.colunaCtt li a {
+    color: beige;
+    text-decoration: none;
+}
+
+.colunaCtt li a:hover {
+    text-decoration: underline;
+}
+
+.tituloContato h1 {
+    padding: 15px;
+}
+
+#imgcoluna {
+    width: 100%;
+    height: 100%;
+}
+
+#imgcoluna img {
+    width: 100%;
+    height: 100%;
+    opacity: 40%;
+}
+
+/*FOOTER RODAPE DIREITOS*/
+#rodape {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 20px;
+    background-color: #574f73;
+    display: flex;
+}
+
+#rodape p {
+    font-size: .9em;
+    color: beige;
+    opacity: 30%;
+    margin: auto;
+}
+
+/*ÁREA SERVIÇOS E PRODUTOS*/
+/*INTROPAGE*/
+.introPage {}
+
+.introPage h2 {
+    color: var(--cor1);
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+    font-size: 2em;
+    text-shadow: 0px -1px #240046, 1px 0px #240046, 0px 1px #240046, -1px 0px #240046;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.introPage p {
+    color: #574f73;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    line-height: 27px;
+    font-size: 1.2em;
+    font-weight: bold;
+
+}
+
+/*area de anuncio de produtos ou serviços*/
+.areaAnuncio {
+    justify-content: space-around;
+    max-width: 1320px;
+}
+.areaAnuncio img{
+    height: 250px;
+    border-radius: 15px;
+}
+
+.anuncio {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5px 10px 5px;
+    border-radius: 16px;
+    padding: 10px;
+    border: 3px dotted var(--cor4);
+}
+
+.imgAnuncio {
+    height: 200px;
+    background-color: crimson;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.txtAnuncio{
+    padding: 5px;
+    text-align: start;
+}
+
+.txtAnuncio h3,h4,h5,p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #240046;
+    margin-top: 4px;
+    text-align: start;
+}
+
+.txtAnuncio h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: var(--cor1);
+    text-shadow: 0px -1px #240046, 1px 0px #240046, 0px 1px #240046, -1px 0px #240046;
+}
+
+.txtAnuncio h5 {
+    text-decoration: underline;
+}
+
+/******** Página Usuário***********/
+
+/* class header menu inicial */
+ul#menulogo li {
+    list-style: none;
+}
+
+#menulogo img {
+    margin-right: 40px;
+    width: 30px;
+    padding: 5px;
+    align-items: center;
+}
+
+.menubot {
+    display: flex;
+    gap: 10px;
+
+}
+
+.menubtn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: var(--cor3);
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    font-family: nova;
+}
+
+.menubtn:hover {
+    background-color: var(--cor5);
+    /* Customize hover color as needed */
+}
+
+
+body {
+    background-color: var(--cor1);
+}
+
+/* class perfiluser */
+#titulodiv1 {
+    font-family: nova;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.conteudouser {
+    background-color: var(--cor2);
+    border-width: 2px;
+    border-style: dashed;
+    border-color: var(--cor4);
+    border-radius: 70px;
+    width: 800px;
+    padding: 10px;
+}
+
+#nomeuser h2 {
+    padding: 15px;
+    margin-left: 20px;
+    font-family: especial;
+}
+
+#titulodiv2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+.servicouser {
+    box-sizing: content-box;
+    padding: 10px;
+    background: var(--cor4);
+    border-radius: 20px;
+    border: var(--cor5);
+    margin: 20px auto;
+    width: 700px;
+    height: 190px;
+}
+
+.nomeserv h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--cor1);
+}
+
+.nomeserv {
+    padding: 1px;
+    /* Espaçamento interno */
+}
+
+.nomeserv p#serv_descuser {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--cor1);
+}
+
+.serv_descuser {
+    list-style: none;
+}
+
+.sobreserv p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+
+}
+
+#titulodiv4 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+.produtouser {
+    box-sizing: content-box;
+    padding: 10px;
+    background: var(--cor4);
+    border-radius: 20px;
+    border: var(--cor5);
+    margin: 20px auto;
+    width: 700px;
+    height: auto;
+}
+
+#descricaopuser {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: var(--cor1);
+}
+
+.imgprodutos img {
+    width: 180px;
+    margin-left: 250px;
+    border-radius: 20px;
+}
+
+
+/*****QUEM SOMOS****/
+
+
+#tituloqmsomos {
+    font-family: nova;
+    text-align: center;
+    font-size: 2.0em;
+}
+.qmsomos_serv, .qmsomos_petcho {
+    display: block;
+    place-items: center;
+    width: auto;
+    display: flex; 
+    margin-bottom: 20px;
+    gap: 50px;
+    background-color: #240046;
+}
+.qmsomos_serv img {
+    margin-top: 100px;
+    height: 180px;
+    width: 180px;
+    border-radius: 40%;
+    object-fit: cover;
+}
+.qmsomos_petcho img{
+    margin-top: 100px;
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+}
+
+h3#proserv, h3#propet{
+    position: absolute;
+    font-family: nova;
+    font-size: 20px;
+    color: var(--cor3);
+    line-height: 1.9;
+    margin-top: -250px;
+    text-align: start;
+   
+}
+p#sec_qmserv{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: var(--cor5);
+    margin: 40px;
+    line-height: 1.3;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+p#text_prop{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    color: var(--cor2);
+    margin: 40px 10px 0;
+    line-height: 1.3;
+}
+
+
+
+
+/*cadastro serviço oferecido pelo usuário*/
+.areaCadastro{
+    /*background-color: chocolate;*/
+    margin-bottom: 200px;
+    height: 500px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.areaCadastro label{
+    font-size: 1.4em;
+    color: #240046;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+#funcoesServ, #contatoServ, #valorServ, #dispoServ, #descServ, #nomeProd, #precoProd, #qtdProd, #descProd, #categoriaProd {
+    border: 3px solid #240046;
+    border-radius: 12px;
+    font-size: 1.2em;
+    margin: 0px 0px 15px 0px;
+    background-color: white;
+}
+#funcoesServ, #contatoServ, #categoriaProd{
+    height: 50px;
+}
+#contatoServ, #valorServ, #dispoServ, #descServ, #descProd{
+    width: 500px;
+}
+#descServ, #descProd{
+    height: 150px;
+    padding: 3px;
+}
+
+/*RESPONSIVIDADE DO SITEEEEEE*/
+
+@media screen and (max-width: 1000px) {
+
+    /*topo do site*/
+    #titulo h2 {
+        font-size: 95px;
+        margin-bottom: 40px;
+        padding-top: 90px;
+    }
+
+    /*container */
+    .container-img img {
+        width: 90px;
+        height: 100px;
+        padding: 10px;
+        margin: 0px auto 0px auto;
+
+    }
+
+    .container-img {
+        flex-direction: column;
+        margin: 20px;
+        width: 350px;
+        height: 350px;
+        padding: 5px;
+        margin: 0px auto 0px auto;
+    }
+
+    #login {
+        width: 200px;
+        margin: 0px auto 0px auto;
+    }
+
+    /*caixa de usuario e senha*/
+    input[type="text"],
+    input[type="password"] {
+        justify-content: center;
+        border-radius: 4px;
+        margin-left: -12px;
+    }
+
+    /*botão entrar*/
+    input[type="submit"] {
+        margin: 5px auto 0px auto;
+    }
+
+    /*eye-fill*/
+    .senha-container i {
+        left: 195px;
+    }
+
+    /*class mensagem*/
+    .mensagem {
+        padding-top: 10px;
+        font-family: normal;
+        display: block;
+    }
+    /*  Responsivo da home  */
+#menuInicial{
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.menu{
+    display: flex;
+    justify-content: center;
+}
+.menu li{
+    font-size: .6em;
+}
+
+.bannerTopo{
+    width: 600px;
+    height: 300px;
+}
+.bannerTopo img{
+    display: none;
+}
+.bannerTopo h1{
+    font-size: 8.0em ;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+main, #sectionSec{
+    width: 600px;
+}
+main {
+    margin: 30px auto 20px auto;
+    justify-content: center;
+}
+
+main h1{
+    display: flex;
+    justify-content: center;
+}
+
+
+#servico_petcho, #servico_petcho2{
+    margin: 10px auto 10px auto;
+    width: 500px;
+}
+
+.textoMain{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper{
+    display: block;
+    height: auto;
+    justify-content: center;
+}
+.image{
+    width: 300px;
+    margin: 10px auto 10px auto;
+    display: flex;
+    justify-content: center;
+    height: 250px;
+}
+.areaContato, .tituloContato{
+    width: 700px;
+    height: auto;
+    margin-bottom: 0px;
+    
+}
+.tituloContato h1{
+    display: flex;
+    justify-content: center;
+    font-size: 1.4em;
+    width: 500px;
+}
+.subAreaCtt{
+    display: flex;
+    justify-content: start ;
+}
+.colunaCtt{
+    margin: 10px;
+    width: 200px;
+    height: auto;
+}
+.colunaCtt img {
+    display: none;
+}
+}
+
+@media screen and (max-width: 500px) {
+    #menuInicial{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu{
+        display: flex;
+        justify-content: center;
+    }
+    .bannerTopo{
+        width: 300px;
+        height: 150px;
+    }
+    .bannerTopo img{
+        display: none;
+    }
+    .bannerTopo h1{
+        font-size: 3.0em ;
+    }
+    
+    main, #sectionSec, .introPage, .areaAnuncio{
+        width: 300px;
+    }
+    main {
+        margin: 30px auto 20px auto;
+        justify-content: center;
+    }
+    
+    main h1{
+        display: flex;
+        justify-content: center;
+    }
+    #servico_petcho{
+        width: 250px;
+    }
+    .tituloMain{
+        font-size: 1.6em;
+        margin: 20px 5px 5px 5px;
+        text-align: center; 
+        
+    }
+    .introPage h2{
+   
+    display:flex;
+    justify-content:center;
+    text-align:center;
+    font-size: 1.5em;
+    }
+    
+    .textoMain{
+        text-align: center;   }
+    
+    .wrapper{
+        margin: 0px 0px 0px 0px;
+        display: block;
+        height: auto;
+        justify-content: center;
+    }
+    .image{
+        width: 250px;
+        margin: 0px auto 10px auto;
+        display: flex;
+        justify-content: center;
+        height: 250px;
+    }
+    .areaContato, .tituloContato{
+        width: 100%;
+        height: auto;
+        margin-bottom: 0px;
+        
+    }
+    .tituloContato h1{
+        display: flex;
+        justify-content: center;
+        font-size: 1.2em;
+        width: 350px;
+    }
+    .subAreaCtt{
+        display: block;
+        justify-content: start ;
+    }
+    .colunaCtt{
+        margin: 10px;
+        width: 365px;
+        height: auto;
+    }
+    .colunaCtt img {
+        display: none;
+    }
+    #rodape{
+        
+        width: 100%;
+    }
+    #rodape p{
+        font-size: 0.7em;
+    }
+
+    .introPage p{
+        font-size: 1.1em;
+        line-height: 20px;
+    }
+    .anuncio{
+        display: block;
+    }
+
+}
